@@ -1,0 +1,472 @@
+/* =============================================
+   FILMOTEKA
+============================================= */
+
+:root {
+  --bg-dark:      #0d0d0f;
+  --bg-card:      #141418;
+  --bg-hover:     #1c1c22;
+  --gold:         #c9a84c;
+  --gold-light:   #e8c96e;
+  --gold-dim:     #6b5320;
+  --text-primary: #f0ece4;
+  --text-muted:   #8a8680;
+  --text-dim:     #504e4a;
+  --border:       #2a2a30;
+  --border-gold:  #3d3020;
+  --accent-red:   #c0392b;
+  --accent-teal:  #1a7d6a;
+  --accent-blue:  #2c5f8a;
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:    14px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --transition:   0.2s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =============================================
+   HEADER
+============================================= */
+
+header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo h1 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.header-strip {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent 100%);
+}
+
+/* =============================================
+   NAVIGATION
+============================================= */
+
+.nav-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  color: var(--gold);
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background var(--transition), border-color var(--transition);
+  user-select: none;
+}
+
+.nav-toggle-label:hover {
+  background: var(--border-gold);
+  border-color: var(--gold-dim);
+}
+
+#nav-toggle { display: none; }
+
+.nav-wrapper nav {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  min-width: 170px;
+  padding: 6px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.7);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 300;
+}
+
+#nav-toggle:checked + nav {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-menu a {
+  display: block;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-weight: 400;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+  letter-spacing: 0.02em;
+}
+
+.nav-menu a:hover,
+.nav-menu a[aria-current="page"] {
+  background: var(--border-gold);
+  color: var(--gold);
+}
+
+/* =============================================
+   UVODNI ČLANAK
+============================================= */
+
+.uvodni-clanak {
+  max-width: 1200px;
+  margin: 28px auto 0;
+  padding: 0 32px;
+}
+
+.uvodni-clanak article {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 16px 22px;
+  animation: fade-up 0.5s ease both;
+}
+
+.article-accent {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.uvodni-clanak article h2 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--gold);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.uvodni-clanak article p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 300;
+}
+
+/* =============================================
+   MAIN GRID
+============================================= */
+
+main {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 0 32px;
+}
+
+.glavni-grid {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* =============================================
+   SEKCIJA FILMOVI
+============================================= */
+
+.sekcija-filmovi {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  animation: fade-up 0.5s ease both;
+}
+
+/* =============================================
+   TABLICA
+============================================= */
+
+.tablica-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.tablica-filmovi {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.tablica-filmovi thead tr {
+  background: var(--bg-dark);
+}
+
+.tablica-filmovi th {
+  padding: 11px 12px;
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.tablica-filmovi tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+.tablica-filmovi tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tablica-filmovi tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.tablica-filmovi td {
+  padding: 10px 12px;
+  color: var(--text-primary);
+  font-weight: 300;
+  vertical-align: middle;
+}
+
+.tablica-filmovi td:first-child {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+/* Žanr bedževi */
+
+.zanr {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.zanr-drama        { background: #1a1040; color: #9b80e0; border: 1px solid #2e1f6e; }
+.zanr-komedija     { background: #0e2a1a; color: #5fb87a; border: 1px solid #1a4a2e; }
+.zanr-animacija    { background: #1a1f30; color: #6a9fe0; border: 1px solid #2a3558; }
+.zanr-romantični   { background: #2a1020; color: #d070a0; border: 1px solid #4a1c38; }
+.zanr-krimic       { background: #1a1010; color: #c07050; border: 1px solid #3a1e14; }
+.zanr-triler       { background: #121212; color: #909090; border: 1px solid #2a2a2a; }
+.zanr-avantura     { background: #1a1a08; color: #b0a030; border: 1px solid #3a3810; }
+.zanr-dokumentarni { background: #0a1e22; color: #4ab0c0; border: 1px solid #14383e; }
+.zanr-horor        { background: #200808; color: #c04040; border: 1px solid #3c1010; }
+.zanr-akcija       { background: #201208; color: #d08030; border: 1px solid #3e2010; }
+
+/* Ocjena */
+
+.ocjena {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--gold);
+  min-width: 28px;
+}
+
+/* =============================================
+   ASIDE
+============================================= */
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fade-up 0.5s ease 0.1s both;
+}
+
+.aside-header {
+  padding: 0 0 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.aside-header h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.aside-slika-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+
+.aside-slika-wrapper img {
+  width: 100%;
+  display: block;
+  height: 140px;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.aside-slika-wrapper:hover img {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* =============================================
+   FOOTER
+============================================= */
+
+footer {
+  margin-top: 48px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+footer p {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+/* =============================================
+   ANIMACIJE
+============================================= */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+
+@media (max-width: 900px) {
+  .glavni-grid {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .aside-header {
+    grid-column: 1 / -1;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .header-inner { padding: 0 18px; }
+
+  .logo h1 { font-size: 1.2rem; }
+
+  main, .uvodni-clanak { padding: 0 18px; }
+
+  .sekcija-filmovi { padding: 16px; }
+
+  .tablica-filmovi th:nth-child(1),
+  .tablica-filmovi td:nth-child(1),
+  .tablica-filmovi th:nth-child(5),
+  .tablica-filmovi td:nth-child(5) { display: none; }
+
+  aside {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    padding: 16px 18px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .tablica-filmovi th:nth-child(6),
+  .tablica-filmovi td:nth-child(6) { display: none; }
+
+  .tablica-filmovi { font-size: 0.78rem; }
+
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filmoteka – Galerija</title>
+
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/style_slike.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="logo">
+          <h1>Filmoteka</h1>
+        </div>
+
+        <div class="nav-wrapper">
+          <label class="nav-toggle-label" for="nav-toggle">☰ Izbornik</label>
+          <input type="checkbox" id="nav-toggle" />
+
+          <nav>
+            <ul class="nav-menu">
+              <li><a href="index.html">Početna</a></li>
+              <li><a href="grafikon.html">Grafikoni</a></li>
+              <li><a href="/slike" aria-current="page">Galerija</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header-strip"></div>
+    </header>
+
+    <main>
+      <section class="sekcija-filmovi">
+        <h2 class="galerija-naslov">Galerija slika</h2>
+        <p class="galerija-opis">Klikni na sliku za prikaz u punoj veličini.</p>
+
+        <section class="galerija">
+          <% images.forEach((image, index) => { %>
+
+            <div class="lb-item">
+              <input type="checkbox" id="<%= image.id %>" class="lb-toggle" />
+            
+              <figure class="galerija_slika">
+                <label for="<%= image.id %>">
+                  <img src="<%= image.url %>" />
+                </label>
+                <figcaption><%= image.title %></figcaption>
+              </figure>
+            
+              <div class="lightbox-overlay">
+                <div class="lightbox-box">
+                  <label for="<%= image.id %>" class="lightbox-close">✕</label>
+                  <img src="<%= image.url %>" />
+                </div>
+              </div>
+            </div>
+
+          <% }); %>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">Filmoteka</div>
+        <p>&copy; 2025 Web Programiranje</p>
+      </div>
+    </footer>
+  </body>
+</html>

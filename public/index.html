@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Filmoteka – klasični filmovi iz cijelog svijeta s ocjenama i žanrovima"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Filmoteka – Popis Filmova</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="logo">
+          <h1>Filmoteka</h1>
+        </div>
+
+        <div class="nav-wrapper">
+          <label
+            class="nav-toggle-label"
+            for="nav-toggle"
+            aria-label="Otvori navigacijski izbornik"
+          >
+            <span>☰</span> Izbornik
+          </label>
+          <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+          <nav aria-label="Primarna navigacija" role="navigation">
+            <ul class="nav-menu" role="list">
+              <li role="listitem">
+                <a href="index.html" aria-current="page">Početna</a>
+              </li>
+              <li role="listitem"><a href="grafikon.html">Grafikoni</a></li>
+              <li role="listitem"><a href="/slike">Galerija</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="header-strip"></div>
+    </header>
+
+    <div class="uvodni-clanak">
+      <article aria-labelledby="clanak-naslov">
+        <div class="article-accent">DOBRODOŠLI</div>
+        <h2 id="clanak-naslov">O ovoj stranici</h2>
+        <p>
+          Filmoteka je pregled klasičnih filmova iz cijelog svijeta. Stranica
+          prikazuje popis filmova s ocjenama, žanrovima i osnovnim
+          informacijama. Koristite navigaciju za pristup grafikonima i galeriji
+          slika.
+        </p>
+      </article>
+    </div>
+
+    <main>
+      <div class="glavni-grid">
+        <section class="sekcija-filmovi">
+          <div class="tablica-wrapper">
+            <table
+              class="tablica-filmovi"
+              role="table"
+              aria-label="Popis filmova s osnovnim informacijama"
+            >
+              <thead>
+                <tr role="row">
+                  <th scope="col" role="columnheader">ID</th>
+                  <th scope="col" role="columnheader">Naslov</th>
+                  <th scope="col" role="columnheader">Godina</th>
+                  <th scope="col" role="columnheader">Žanr</th>
+                  <th scope="col" role="columnheader">Trajanje</th>
+                  <th scope="col" role="columnheader">Država</th>
+                  <th scope="col" role="columnheader">Ocjena</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>The Shawshank Redemption</td>
+                  <td>1994</td>
+                  <td><span class="zanr zanr-drama">Drama</span></td>
+                  <td>142 min</td>
+                  <td>SAD</td>
+                  <td>
+                    <span class="ocjena ocjena-top" style="--val: 9.3"
+                      >9.3</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Life Is Beautiful</td>
+                  <td>1997</td>
+                  <td><span class="zanr zanr-drama">Drama</span></td>
+                  <td>116 min</td>
+                  <td>Italija</td>
+                  <td><span class="ocjena" style="--val: 8.6">8.6</span></td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>Before Sunrise</td>
+                  <td>1995</td>
+                  <td><span class="zanr zanr-romantični">Romantični</span></td>
+                  <td>101 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.1">8.1</span></td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>The Big Lebowski</td>
+                  <td>1998</td>
+                  <td><span class="zanr zanr-komedija">Komedija</span></td>
+                  <td>117 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.2">8.2</span></td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>La Dolce Vita</td>
+                  <td>1960</td>
+                  <td><span class="zanr zanr-komedija">Komedija</span></td>
+                  <td>174 min</td>
+                  <td>Italija</td>
+                  <td><span class="ocjena" style="--val: 8">8.0</span></td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td>Cinema Paradiso</td>
+                  <td>1988</td>
+                  <td><span class="zanr zanr-drama">Drama</span></td>
+                  <td>155 min</td>
+                  <td>Italija</td>
+                  <td><span class="ocjena" style="--val: 8.5">8.5</span></td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td>Se7en</td>
+                  <td>1995</td>
+                  <td><span class="zanr zanr-krimic">Krimić</span></td>
+                  <td>127 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.6">8.6</span></td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td>Deep Red</td>
+                  <td>1975</td>
+                  <td><span class="zanr zanr-triler">Triler</span></td>
+                  <td>126 min</td>
+                  <td>Italija</td>
+                  <td><span class="ocjena" style="--val: 7.6">7.6</span></td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td>Goodfellas</td>
+                  <td>1990</td>
+                  <td><span class="zanr zanr-drama">Drama</span></td>
+                  <td>146 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.7">8.7</span></td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td>The Good, the Bad and the Ugly</td>
+                  <td>1966</td>
+                  <td><span class="zanr zanr-avantura">Avantura</span></td>
+                  <td>178 min</td>
+                  <td>Italija</td>
+                  <td><span class="ocjena" style="--val: 8.8">8.8</span></td>
+                </tr>
+                <tr>
+                  <td>32</td>
+                  <td>Forrest Gump</td>
+                  <td>1994</td>
+                  <td><span class="zanr zanr-drama">Drama</span></td>
+                  <td>142 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.8">8.8</span></td>
+                </tr>
+                <tr>
+                  <td>34</td>
+                  <td>Fahrenheit 9/11</td>
+                  <td>2004</td>
+                  <td>
+                    <span class="zanr zanr-dokumentarni">Dokumentarni</span>
+                  </td>
+                  <td>122 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 7.5">7.5</span></td>
+                </tr>
+                <tr>
+                  <td>36</td>
+                  <td>The Exorcist</td>
+                  <td>1973</td>
+                  <td><span class="zanr zanr-horor">Horor</span></td>
+                  <td>122 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.1">8.1</span></td>
+                </tr>
+                <tr>
+                  <td>37</td>
+                  <td>Johnny Stecchino</td>
+                  <td>1991</td>
+                  <td><span class="zanr zanr-komedija">Komedija</span></td>
+                  <td>102 min</td>
+                  <td>Italija</td>
+                  <td><span class="ocjena" style="--val: 7.2">7.2</span></td>
+                </tr>
+                <tr>
+                  <td>38</td>
+                  <td>Die Hard</td>
+                  <td>1988</td>
+                  <td><span class="zanr zanr-akcija">Akcija</span></td>
+                  <td>132 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.2">8.2</span></td>
+                </tr>
+                <tr>
+                  <td>45</td>
+                  <td>Mad Max: Fury Road</td>
+                  <td>2015</td>
+                  <td><span class="zanr zanr-akcija">Akcija</span></td>
+                  <td>120 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 8.1">8.1</span></td>
+                </tr>
+                <tr>
+                  <td>47</td>
+                  <td>Superbad</td>
+                  <td>2007</td>
+                  <td><span class="zanr zanr-komedija">Komedija</span></td>
+                  <td>113 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 7.6">7.6</span></td>
+                </tr>
+                <tr>
+                  <td>49</td>
+                  <td>12 Angry Men</td>
+                  <td>1957</td>
+                  <td><span class="zanr zanr-drama">Drama</span></td>
+                  <td>96 min</td>
+                  <td>SAD</td>
+                  <td><span class="ocjena" style="--val: 9">9.0</span></td>
+                </tr>
+                <tr>
+                  <td>51</td>
+                  <td>The Godfather</td>
+                  <td>1972</td>
+                  <td><span class="zanr zanr-komedija">Komedija</span></td>
+                  <td>175 min</td>
+                  <td>SAD</td>
+                  <td>
+                    <span class="ocjena ocjena-top" style="--val: 9.2"
+                      >9.2</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside aria-label="Galerija filmskih slika">
+          <div class="aside-header">
+            <h3>Galerija</h3>
+          </div>
+
+          <div class="aside-slika-wrapper">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/2.jpg"
+                type="image/jpeg"
+              />
+              <img
+                src="images/2.jpg"
+                loading="lazy"
+                width="400"
+                height="160"
+              />
+            </picture>
+          </div>
+
+          <div class="aside-slika-wrapper">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="images/4.jpg"
+                type="image/jpeg"
+              />
+              <img
+                src="images/4.jpg"
+                loading="lazy"
+                width="400"
+                height="160"
+              />
+            </picture>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-inner">
+        <span class="footer-logo">Filmoteka</span>
+        <p>&copy; 2025. Web Programiranje – LV1</p>
+      </div>
+    </footer>
+  </body>
+</html>
